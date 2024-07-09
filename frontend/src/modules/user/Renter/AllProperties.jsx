@@ -13,6 +13,7 @@ function AllProperties() {
                         <Cards/>
                         <Cards/>
                         <Cards/>
+                        
 
 
                     </div>

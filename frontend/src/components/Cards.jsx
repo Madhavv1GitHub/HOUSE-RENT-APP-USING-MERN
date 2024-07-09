@@ -11,7 +11,7 @@ function Cards() {
                 />
                 <div class="p-6">
                     <h3 class="text-lg font-semibold">Cozy Apartment</h3>
-                    <p class="text-muted-foreground">2 Beds, 1 Ba</p>
+                    <p class="text-muted-foreground">2 Beds, 1 Bath</p>
                     <p class="text-lg font-bold">$1,500/month</p>
                 </div>
                 <div class="flex items-center p-6">
