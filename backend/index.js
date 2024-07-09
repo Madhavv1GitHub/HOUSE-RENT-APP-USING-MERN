@@ -10,10 +10,29 @@ app.use(cors());
 
 mongoose.connect("mongodb://localhost:27017/houserent");
 
-app.post('/r',(req,res)=>{
+app.post('/register',(req,res)=>{
     userModel.create(req.body)
     .then(users=>res.json(users))
     .catch(err=>res.json(err))
+})
+
+app.post('/login',(req,res)=>{
+    const {email,password,user_type}=req.body;
+    userModel.findOne({email:email})
+    .then(user=>{
+        if(user){
+            if(user.password===password && user.user_type===user_type){
+                res.json("Success");
+            }
+            else{
+                res.json("The password or Usertype is incorrect");
+            }
+        }
+        else
+        {
+            res.json("Not Registered");
+        }
+    })
 })
 
 

@@ -1,17 +1,36 @@
 import React, { useState } from 'react';
 import Header from '../../components/Header'
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
     const [email, setEmail] = useState();
     const [password, setpassword] = useState();
     const [user_type, setUser_type]=useState();
-
+    const navigate=useNavigate();
     const handleSubmit = (e) => {
 
         e.preventDefault();
-        axios.post('http://localhost:3001/r', {email, password,user_type})
-            .then(result => {console.log(result) 
-            navigate('/prp')})
+        axios.post('http://localhost:3001/login', {email, password,user_type})
+            .then(result => {
+                console.log(result) 
+                if(result.data==="Success")
+                {
+                    navigate('/prp')
+                }
+                else
+                {
+                    if(result.data==="The password or Usertype is incorrect")
+                    {
+                        alert(result.data);
+                    }
+                    if(result.data==="Not Registered")
+                    {
+                        alert(result.data);
+                    }
+                }
+            })
+            
             .catch(err => console.log(err))
 
     }
