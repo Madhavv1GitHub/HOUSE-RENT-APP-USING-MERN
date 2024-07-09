@@ -2,6 +2,19 @@ import React, { useState } from 'react';
 import Header from '../../components/Header'
 
 function Login() {
+    const [email, setEmail] = useState();
+    const [password, setpassword] = useState();
+    const [user_type, setUser_type]=useState();
+
+    const handleSubmit = (e) => {
+
+        e.preventDefault();
+        axios.post('http://localhost:3001/r', {email, password,user_type})
+            .then(result => {console.log(result) 
+            navigate('/prp')})
+            .catch(err => console.log(err))
+
+    }
 
     return (
         <>
@@ -16,14 +29,14 @@ function Login() {
                                         <h1 class="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">Login to Your Account</h1>
                                         <p class="text-muted-foreground max-w-[600px] md:text-xl">Welcome</p>
                                     </div>
-                                    <form action="/submitted" method=''>
+                                    <form onSubmit={handleSubmit}>
                                         <div class="bg-card text-card-foreground w-full max-w-md rounded-lg border shadow-sm" data-v0-t="card">
                                             <div class="flex flex-col space-y-1 p-6">
                                                 <h3 class="whitespace-nowrap text-2xl font-semibold tracking-tight">Login</h3>
 
                                             </div>
                                             <div class="relative h-10 w-72 min-w-[200px] ml-6">
-                                                <select
+                                                <select name='user-type' id='user-type' onChange={(e) => setUser_type(e.target.value)}
                                                     class="peer h-full w-full rounded-[7px] border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 empty:!bg-gray-900 focus:border-2 focus:border-gray-900 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50">
                                                     <option value="Owner">Owner</option>
                                                     <option value="Renter">Renter</option>
@@ -36,12 +49,12 @@ function Login() {
                                             </div>
                                             <div class="grid gap-4 p-6">
                                                 <div class="grid gap-2">
-                                                    <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="email"> Email </label>
-                                                    <input class="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="email" placeholder="m@example.com" type="email" required />
+                                                    <label for="email" class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" > Email </label>
+                                                    <input  name="email" id="email" placeholder="john@example.com" type="email" onChange={(e) => setEmail(e.target.value)} class="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"  required />
                                                 </div>
                                                 <div class="grid gap-2">
-                                                    <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="password"> Password </label>
-                                                    <input class="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="password" type="password" required />
+                                                    <label for="password" class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" > Password </label>
+                                                    <input name="password"  id="password" type="password" onChange={(e) => setpassword(e.target.value)} class="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"  required />
                                                 </div>
                                             </div>
                                             <div class="flex items-center p-6">

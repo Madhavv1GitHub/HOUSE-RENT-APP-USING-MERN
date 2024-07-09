@@ -12,8 +12,9 @@ function Register() {
     const handleSubmit = (e) => {
 
         e.preventDefault();
-        axios.post('http://localhost:3001/r', { name, user_type,phone, email, password })
-            .then(result => console.log(result))
+        axios.post('http://localhost:3001/r', { name,user_type,phone, email, password })
+            .then(result => {console.log(result) 
+            navigate('/login')})
             .catch(err => console.log(err))
 
     }
@@ -58,7 +59,7 @@ function Register() {
                             <input name="password"  id="password" type="password" onChange={(e) => setpassword(e.target.value)} class="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"  required />
                         </div>
                         <div class="flex items-center p-6">
-                            <button type="submit"  class="block w-full select-none rounded-lg bg-gray-900 px-6 py-3 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"  >Register</button>
+                            <button  type="submit"  class="block w-full select-none rounded-lg bg-gray-900 px-6 py-3 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"  >Register</button>
                         </div>
                     </form>
                 </div>
