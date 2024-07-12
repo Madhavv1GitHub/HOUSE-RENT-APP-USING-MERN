@@ -6,6 +6,7 @@ import Header from './components/Header'
 import Register from './modules/common/Register'
 import AllProperties from './modules/user/Renter/AllProperties'
 import AddProperty from './modules/user/Owner/AddProperty'
+import AllPropertiesCards from './modules/user/Renter/AllPropertiesCards'
 function App() {
 
   return (
@@ -17,9 +18,10 @@ function App() {
           <Route path='/home' element={<Home/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/register' element={<Register/>}/>
-          <Route path='/prp' element={<AllProperties/>}/>
+          <Route path='*' element={<div>404 Page Not Found</div>}/>
+          <Route path='/details' element={<AllPropertiesCards/>}/>
           <Route path='/owner' element={<AddProperty/>}/>
-          
+          <Route path='/prp' element={<AllProperties/>}/>
         </Routes>
       </Router>
     </>
