@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import Header from '../../components/Header'
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 function Login() {
     const [email, setEmail] = useState();
@@ -16,7 +15,15 @@ function Login() {
                 console.log(result) 
                 if(result.data==="Success")
                 {
-                    navigate('/prp')
+                    if(user_type==="Renter")
+                    {
+                        navigate('/details')
+
+                    }
+                    else
+                    {
+                        navigate('/owner')
+                    }
                 }
                 else
                 {
@@ -81,15 +88,15 @@ function Login() {
                                                     type="submit">Sign In</button>
                                             </div>
                                             <div class="flex p-6 justify-items-center" >
-                                                <p>Not Registered?
-                                                    <a href="/register" class="p-4 font-medium text-blue-600 dark:text-blue-500 hover:underline">Register</a>
+                                                <p class="pr-4">Not Registered?
+                                                  <span class=" font-medium text-blue-600 dark:text-blue-500 hover:underline"> <NavLink to={'/register'} >Register</NavLink></span> 
                                                 </p>
                                             </div>
                                         </div>
                                     </form>
                                 </div>
                                 <div class="flex flex-col justify-center space-y-4">
-                                    <img src="assets/Profile.jpg" class="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last " />
+                                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last " />
                                 </div>
 
                             </div>

@@ -9,7 +9,19 @@ const PropertyDetails=(req,res)=>{
     }) 
 }
 
+//Individual Property Details for Dynamic Pages
+
+const IndvidualDetails=(req,res)=>{
+    Property.findById(req.params.id).then((ptdetails)=>{
+        res.json(ptdetails)
+    }).catch((err)=>{
+        console.log(err);
+    }) 
+}
+
 //image upload 
+
+
 //  Uploading Property Details from Owner To DB
  const uploadProperty=(req,res)=>{
     Property.create(req.body)
@@ -18,4 +30,6 @@ const PropertyDetails=(req,res)=>{
    
  }
 
-module.exports={PropertyDetails ,uploadProperty} 
+
+
+module.exports={PropertyDetails ,uploadProperty,IndvidualDetails} 

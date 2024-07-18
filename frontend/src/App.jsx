@@ -21,7 +21,7 @@ function App() {
           <Route path='*' element={<div>404 Page Not Found</div>}/>
           <Route path='/details' element={<AllPropertiesCards/>}/>
           <Route path='/owner' element={<AddProperty/>}/>
-          <Route path='/prp' element={<AllProperties/>}/>
+          <Route path='/prp/:id' element={<AllProperties/>}/>
         </Routes>
       </Router>
     </>

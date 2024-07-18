@@ -1,7 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import axios from 'axios'
 
 
 function AllProperties() {
+
+
+    const [propertyDetails, setpropertyDetails] = useState([]);
+    const { id } = useParams();
+    useEffect(() => {
+        axios.get(`http://localhost:3001/propertyget/${id}`)
+            .then((res) => { console.log(res.data), setpropertyDetails(res.data) })
+            .catch(err => { console.log(err) })
+
+
+
+    }, [])
+
+
+
+
+
     return (
 
         <>
@@ -10,7 +29,8 @@ function AllProperties() {
                 <div class="grid gap-8 md:grid-cols-2">
                     <div class="grid gap-6">
                         <div>
-                            <img src="https://www.southernliving.com/thmb/Z3fwf9xyrTxxBnDmd56JJCEjS0s=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/02_master_bedroom_-_after-2000-bd72cb4c59f547f59649fba940469cd0.jpg"  class="w-full rounded-lg object-cover" />
+                            <img src={propertyDetails.
+                                propertyimage} class="w-full rounded-lg object-cover" />
                         </div>
                         <div class="grid gap-4">
                             <div class="grid grid-cols-2 gap-4">
