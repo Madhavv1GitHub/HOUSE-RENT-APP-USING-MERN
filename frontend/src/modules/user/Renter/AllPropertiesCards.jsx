@@ -19,7 +19,7 @@ function AllPropertiesCards() {
 
             <div>
 
-                <main class="px-4 py-8 md:px-6">
+                <main class="px-4 pt-12 pb-32 md:px-6">
                     <div class="container mx-auto grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 
                         {propertyCardsDetails.map((post) => {
@@ -38,7 +38,7 @@ function AllPropertiesCards() {
 
                                             <div class="flex items-center p-6">
                                                 <Link to={`/prp/${post._id}`} key={post._id} >
-                                                    <button type='button' class="ring-offset-background focus-visible:ring-ring border-input bg-background hover:bg-accent hover:text-accent-foreground inline-flex h-10 w-full items-center justify-center whitespace-nowrap rounded-md border px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">View Details</button>
+                                                    <button type='button' class=" bg-black text-white border-gray-300ring-offset-background focus-visible:ring-ring border-input bg-background hover:bg-accent hover:text-accent-foreground inline-flex h-10 w-full items-center justify-center whitespace-nowrap rounded-md border px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50">View Details</button>
                                                 </Link>
                                             </div>
 

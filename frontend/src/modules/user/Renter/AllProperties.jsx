@@ -36,11 +36,11 @@ function AllProperties() {
                             <div class="grid grid-cols-2 gap-4">
                                 <div class="grid gap-1">
                                     <div class="text-muted-foreground text-sm font-medium">Address</div>
-                                    <div><a href="https://maps.app.goo.gl/aUsG7Ffrps1AjsM46" >123 Main St, Anytown USA</a></div>
+                                    <div><a href="https://maps.app.goo.gl/aUsG7Ffrps1AjsM46" >{propertyDetails.address}</a></div>
                                 </div>
                                 <div class="grid gap-1">
                                     <div class="text-muted-foreground text-sm font-medium">Rooms</div>
-                                    <div>2 Bedrooms, 1 Bathroom, 1 Kitchen, 1 Living Room</div>
+                                    <div>{propertyDetails.bedrooms} Bedrooms, {propertyDetails.bathrooms}Bathroom, {propertyDetails.kitchen} Kitchen, {propertyDetails.livingrooms} Living Room</div>
                                 </div>
                             </div>
                             <div class="grid grid-cols-2 gap-4">
