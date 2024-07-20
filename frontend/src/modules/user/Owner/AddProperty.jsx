@@ -12,12 +12,14 @@ function AddProperty() {
     const [sqft, setSqft] = useState();
     const [address, setAddress] = useState();
     const [propertyimage, setPropertyimage] = useState(null);
+    const[propertydesc,setPropertydesc]=useState();
+    const[rent,setRent]=useState();
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
 
         e.preventDefault();
-        axios.post('http://localhost:3001/addproperty', { propertyname, propertytype, bathrooms, bedrooms, livingrooms, kithcen, sqft, address, propertyimage })
+        axios.post('http://localhost:3001/addproperty', { propertyname, propertytype, bathrooms, bedrooms, livingrooms, kithcen, sqft, address, propertyimage,propertydesc,rent })
             .then(result => {
                 console.log(result)
                 navigate('/details')
@@ -84,6 +86,14 @@ function AddProperty() {
                             <div class="grid gap-2">
                                 <label for="image" class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" > Upload Image </label>
                                 <input onChange={(e) => setPropertyimage(e.target.value)} type='text' id="image" name='image' class="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" />
+                            </div>
+                            <div class="grid gap-2">
+                                <label for="description" class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Description</label>
+                                <input onChange={(e)=>setPropertydesc(e.target.value)} type="text" id='description' name='description' class="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" />
+                            </div>
+                            <div class="grid gap-2">
+                                <label for="rent" class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Monthly Rent</label>
+                                <input onChange={(e)=>setRent(e.target.value)} type="number" id='rent' name='rent' class="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" />
                             </div>
                         </div>
 

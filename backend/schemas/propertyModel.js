@@ -9,7 +9,9 @@ const propertySchema=new mongoose.Schema({
     kitchen:Number,
     sqft:Number,
     address:String,
-    propertyimage:String
+    propertyimage:String,
+    propertydesc:String,
+    rent:Number
 })
 
 const  propertyModel=mongoose.model("Property",propertySchema);

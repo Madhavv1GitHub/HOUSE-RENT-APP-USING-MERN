@@ -57,7 +57,7 @@ function AllProperties() {
                             </div>
                             <div class="grid gap-1">
                                 <div class="text-muted-foreground text-sm font-medium">Description</div>
-                                <div>This cozy 2-bedroom, 1-bathroom apartment is located in the heart of the city. It features hardwood floors, a modern kitchen, and a spacious living room. The building has a shared laundry room and a small backyard. Perfect for a single person or a couple.oom apartment is located in the heart of the city. It features hardwood floors, a modern kitchen, and a spacious living room. The building has a</div>
+                                <div>{propertyDetails.propertydesc}</div>
                             </div>
                         </div>
                     </div>
@@ -69,7 +69,7 @@ function AllProperties() {
                             <div class="grid gap-4 p-6">
                                 <div class="grid gap-1">
                                     <div class="text-muted-foreground text-sm font-medium">Monthly Rent</div>
-                                    <div class="text-3xl font-bold">₹9,500</div>
+                                    <div class="text-3xl font-bold">${propertyDetails.rent}</div>
                                 </div>
 
                                 <div class="flex items-center p-6">

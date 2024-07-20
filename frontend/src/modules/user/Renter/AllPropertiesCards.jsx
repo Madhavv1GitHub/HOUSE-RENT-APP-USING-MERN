@@ -33,7 +33,7 @@ function AllPropertiesCards() {
                                             <div class="p-6">
                                                 <h3 class="text-lg font-semibold">{post.propertyname}</h3>
                                                 <p class="text-muted-foreground">{post.bedrooms} Beds,{post.bathrooms} Bath</p>
-                                                <p class="text-lg font-bold">$1,500/month</p>
+                                                <p class="text-lg font-bold">${post.rent}/month</p>
                                             </div>
 
                                             <div class="flex items-center p-6">
