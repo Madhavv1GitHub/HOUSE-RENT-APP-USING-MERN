@@ -54,19 +54,24 @@ function AboutUs() {
                             <h2 class="text-2xl font-bold">Our Team</h2>
                             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-4">
                                 <div class="bg-muted rounded-lg p-4 shadow-lg">
-                                    <img src={""} alt="John Doe" class="rounded-full w-24 h-24 mx-auto" />
-                                    <h3 class="text-xl font-bold mt-4">John Doe</h3>
+                                    <img src="assets\pic.jpg" alt="John Doe" class="rounded-full w-24 h-24 mx-auto" />
+                                    <h3 class="text-xl font-bold mt-4">Madhavv Viswanath</h3>
                                     <p class="text-muted-foreground">Co-Founder and CEO</p>
                                 </div>
                                 <div class="bg-muted rounded-lg p-4 shadow-lg">
-                                    <img src={"" } alt="Jane Smith" class="rounded-full w-24 h-24 mx-auto" />
-                                    <h3 class="text-xl font-bold mt-4">Jane Smith</h3>
+                                    <img src="assets\hirthick.jpg"  alt="Jane Smith" class="rounded-full w-24 h-24 mx-auto" />
+                                    <h3 class="text-xl font-bold mt-4">Hiruthick</h3>
                                     <p class="text-muted-foreground">Co-Founder and CTO</p>
                                 </div>
                                 <div class="bg-muted rounded-lg p-4 shadow-lg">
-                                    <img src={ ""} alt="Michael Johnson" class="rounded-full w-24 h-24 mx-auto" />
-                                    <h3 class="text-xl font-bold mt-4">Michael Johnson</h3>
+                                    <img src="assets\ganesh.jpg" alt="Michael Johnson" class="rounded-full w-24 h-24 mx-auto" />
+                                    <h3 class="text-xl font-bold mt-4">Ganesh</h3>
                                     <p class="text-muted-foreground">Head of Operations</p>
+                                </div>
+                                <div class="bg-muted rounded-lg p-4 shadow-lg">
+                                    <img src="assets\monishwar.jpg" alt="Michael Johnson" class="rounded-full w-24 h-24 mx-auto" />
+                                    <h3 class="text-xl font-bold mt-4">Mohnishwar</h3>
+                                    <p class="text-muted-foreground">Head of Testing</p>
                                 </div>
                             </div>
                         </div>
